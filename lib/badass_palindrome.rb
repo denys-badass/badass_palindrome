@@ -2,7 +2,16 @@
 
 require_relative "badass_palindrome/version"
 
-module BadassPalindrome
-  class Error < StandardError; end
-  # Your code goes here...
+class String
+
+  def palindrome?
+    down_text == down_text.reverse
+  end
+
+  private
+
+  def down_text
+    scan(/[a-z]/i).join.downcase
+  end
+
 end
